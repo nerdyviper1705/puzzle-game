@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #game-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: transform 0.3s ease; /* Smooth transition for flipping animation */
+  }
+  
+  .card.flipped {
+    background-color: lightblue; /* Change color when flipped */
+  }
+  
+  .card.correct {
+    background-color: lightgreen; /* Change color when correct */
+  }
+  
+  .card.incorrect {
+    animation: jump 0.5s; /* Jump animation for incorrect cards */
+    background-color: red; /* Change color to red for incorrect cards */
+  }
+  
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .card.wrong {
+    animation: shake 0.5s; /* Shake animation for wrong cards */
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: rotate(0);
+    }
+    20% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(-10deg);
+    }
+    80% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  
